@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See you look</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <h1>WHAT DOES YOUR NAME SAY ABOUT YOUR PERSONALITY?</h1>
+        <div class="centerDiv">
+            <div class="details">
+                <label>ENTER YOUR NAME</label><br>
+                <input type="text" name="name" id="nameid" autocomplete="off"><br>
+            </div>
+
+            <div class="imgDiv">
+                <img src="img.jpg" width="200" height="200" id="imgChange"/>
+            </div>
+            <button>Click ME</button>
+        </div>
+    </section>
+    <!-- using jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                const name=$('#nameid').val();
+                $('#imgChange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+            });
+        });
+    </script>
+</body>
+</html>
